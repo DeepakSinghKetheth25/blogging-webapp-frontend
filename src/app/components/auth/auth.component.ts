@@ -16,6 +16,8 @@ export class AuthComponent implements OnInit {
   isLoading=false;
   error: string = '';
   message: string= '';
+  
+  //Extra Fields
   userSub: Subscription;
   currentUser='';
 
@@ -48,21 +50,6 @@ export class AuthComponent implements OnInit {
 
           console.log("Get User Subscription");
           this.userSub =  this.authService.user.subscribe(user=>{this.currentUser = user.username}); //Getting The Current User Details
-        
-        //Calling UserDetails
-        // this.userService.getUserDetails(this.currentUser);
-        // .subscribe(
-        //   responseData=>{
-        //     console.log("Current User Details");
-        //   console.log(responseData);
-        //   },
-        //   error=>{
-        //     console.log(error);
-        //   }
-        // );
-
-        // this.userSub.unsubscribe();
-
         },
         error=>{
           this.isLoading = false;

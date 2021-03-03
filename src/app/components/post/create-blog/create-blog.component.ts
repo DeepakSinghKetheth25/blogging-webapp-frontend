@@ -52,10 +52,10 @@ export class CreateBlogComponent implements OnInit {
 
       }
     ).subscribe(responseData=>{
-      console.log(responseData);
+      // console.log(responseData);
     },
     error=>{
-      console.log(error);
+      // console.log(error);
     });
 
       this.route.navigateByUrl('/', { skipLocationChange: true }).then(() => {

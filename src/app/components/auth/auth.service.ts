@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map, tap } from "rxjs/operators";
+import { GetBlogsService } from '../get-blogs.service';
 import { UserService } from '../user.service';
 import { User } from './user.model';
 
@@ -26,7 +27,7 @@ export class AuthService {
   user = new BehaviorSubject<User>(null);
 
 
-  constructor(private http: HttpClient,private userService: UserService,private route : Router) { }
+  constructor(private http: HttpClient,private userService: UserService,private route : Router,private getBlogsService: GetBlogsService) { }
 
   signup(username: any, password: any): Observable<any> {
     return this.http.post<SignupResponse>(`${this.uri}/signup`,
@@ -72,11 +73,7 @@ export class AuthService {
 
     if(loadedUser.getToken()){
       this.user.next(loadedUser);
-      //Updating Token Expiration Time
-      
-      
-      this.userService.getUserDetails(userData.username);//To get User Details From DB
-      
+      //Updating Token Expiration Time 
       const expirationDateinMilliSec = new Date(userData.tokenExpirationDate).getTime() - new Date().getTime();
       this.autoLogout(expirationDateinMilliSec); 
     }

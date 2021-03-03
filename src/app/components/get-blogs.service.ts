@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Blog } from './home/blog.model';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class GetBlogsService {
 
   
 
-   blogs=[];
+   allBlogs=[];
 
 
    createBlog(obj: {
@@ -32,15 +33,17 @@ export class GetBlogsService {
 
   getAllBlogs(): Observable<any>{
 
-    this.blogs.length=0;
+    this.allBlogs.length=0;
   return this.http.get(`${this.uri}`)
   .pipe(
     map(responseData=>{
       for(const key in responseData){
         if(responseData.hasOwnProperty(key))
-          this.blogs.push({...responseData[key]});
+          this.allBlogs.push({...responseData[key]});
       }
-      return this.blogs;
+      console.log("All Blogs In Service");
+      console.log(this.allBlogs);
+      return this.allBlogs;
     }));
 
   }

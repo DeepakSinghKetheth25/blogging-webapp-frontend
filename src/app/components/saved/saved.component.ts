@@ -47,9 +47,7 @@ export class SavedComponent implements OnInit {
 
 
     console.log("USer: ");
-    // console.log(this.userService.userDetails._id);
 
-    // this.getSavedBlogs();
      setTimeout(() => {
       this.getSavedBlogs();  
       this.isLoading=!!this.mainBlog;
@@ -228,13 +226,6 @@ export class SavedComponent implements OnInit {
     this.route.navigateByUrl('/', { skipLocationChange: true }).then(() => {
       this.route.navigate(['/saved']); // navigate to same route
     });
-
-    // setTimeout(() => {
-    //   this.isLoading=false
-
-      
-    // }, 2000);
-
 
   }
 

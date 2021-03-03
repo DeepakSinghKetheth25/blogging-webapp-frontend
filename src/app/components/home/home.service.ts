@@ -12,21 +12,4 @@ export class HomeService {
 
   uri='http://localhost:3000/blogs';
 
-  // getAllBlogs(): Observable<any>{
-
-  // return this.http.get(`${this.uri}`)
-  // .pipe(
-  //   map(responseData=>{
-  //     const blogs=[];
-      
-  //     for(const key in responseData){
-  //       if(responseData.hasOwnProperty(key))
-  //         blogs.push({...responseData[key]});
-  //     }
-  //     return blogs;
-  //   }));
-
-  // }
-
-
 }

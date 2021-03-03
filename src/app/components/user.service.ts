@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { UserDetails } from './blogs/user-details.interface';
 
 interface userDetails {
   _id :string;
@@ -42,15 +44,18 @@ export class UserService {
   }
 
 
-  getUserDetails(currentUsername: string){
+  getUserDetails(currentUsername: string):Observable<any>{
+    this.userDetails=null;
     console.log("Get User DEtails Called")
-    this.http.post(`${this.uriUser}/userdetails`,{currentUsername : currentUsername}).subscribe(
+    return this.http.post(`${this.uriUser}/userdetails`,{currentUsername : currentUsername}).pipe(
+      map(
        responseData=>{ 
         this.userDetails = JSON.parse(JSON.stringify(responseData));
         console.log(this.userDetails);
         console.log(this.userDetails._id );
+        return this.userDetails;
          }
-        );
+        ));
   }
 
 

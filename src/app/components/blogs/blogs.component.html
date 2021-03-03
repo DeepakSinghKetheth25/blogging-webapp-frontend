@@ -1,49 +1,3 @@
-
-<!-- <div *ngIf="isLoading" class="container">
-    <app-loading-spinner></app-loading-spinner>
-</div>
-
-<div *ngIf="!isLoading" class="ui main text container">
-    
-    <div *ngIf="mainBlog" class="main-blog">
-    <div class="blog-heading">
-        <div class="row">
-            <div class="col-md-10">
-                <h1 class="ui header">{{mainBlog.title}}</h1>
-                <p>{{mainBlog.description}}</p>
-                <p>{{mainBlog.author}}</p>
-            </div>
-            <div class="person-img col-md-2">
-                <img src="../../../assets/images/blogger-image.png" style="height: 150px; width: 150px;" alt="">
-            </div>
-        </div>
-
-    </div>
-
-    
-    <div class="blog-content">
-
-        <p>{{mainBlog.description}}</p>
-    </div>
-    </div>
-
-
-    <div class="jumbotron">
-        <div class="allblogs">
-            <app-blog *ngFor="let singleBlog of allBlogs" [blog]="singleBlog"
-            (blogToRead) = "onReadBlog($event)"
-            (likeBlog) = "onLike($event)"
-            (dislikeBlog) = "onDislike($event)"
-            (saveBlog) = "onSaveBlog($event)"
-            ></app-blog>
-        </div>
-    </div>
-
-
-</div>
-
-<app-footer></app-footer> -->
-
 <div *ngIf="isLoading" class="container">
     <app-loading-spinner></app-loading-spinner>
 </div>
@@ -54,6 +8,9 @@
         <div class="main-blog jumbotron col-lg-8">
             <app-blog  
                 [blog]="mainBlog"
+                [isLiked]="isLiked"
+                [isDisliked]="isDisliked"
+                [isSaved]="isSaved"
                 (likeBlog) = "onLike($event)"
                 (dislikeBlog) = "onDislike($event)"
                 (saveBlog) = "onSaveBlog($event)"
@@ -90,5 +47,5 @@
 
 
 <footer style="bottom: 0px;">
-    <app-footer></app-footer>
+    <!-- <app-footer></app-footer> -->
 </footer>
