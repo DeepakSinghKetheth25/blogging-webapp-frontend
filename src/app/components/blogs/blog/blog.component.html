@@ -1,0 +1,107 @@
+<!-- <div class="singleblog" [ngClass]="{'activeBlog': activeBlog}">
+    <img src="../../../assets/images/blog.jpg" alt="" >
+    
+    <div class="blog-details">
+    <h4 class="title">{{blog.title | slice:0:30}}</h4>
+    <p class="description">{{blog.description | slice:0:80}}... </p>
+    
+    <div class="save" >
+        <input class="readmore" type="button" value="Read More.." (click)="onReadBlog(blog)"> | 
+        <a  routerLink=""  (click)="onSaveBlog(blog._id)"><i [ngClass]="{'fas fas' : isSaved}" class="far far fa-bookmark"></i></a>
+    </div>
+
+    <div class="votes">
+    <div class="row icons">
+        <div column="col-md-2">
+            <button class="like" [disabled]="isDisliked"  (click)="onLike(blog._id)"><i [ngClass]="{'fas fas voteColor': isLiked}"  class="far far fa-thumbs-up"></i></button>
+        </div>
+
+        <div class="col-md-2">
+            <button class="dislike"  [disabled]="isLiked"  (click)="onDislike(blog._id)"><i [ngClass]="{'fas fas voteColor': isDisliked}"  class="far far fa-thumbs-down"></i></button>
+        </div>
+    </div>
+
+
+    <div class="row voteCount">
+        <div column="col-md-2">
+            <p href="">{{blog.likes}}</p>
+        </div>
+
+        <div class="col-md-2">
+            <p href="">{{blog.dislikes}}</p>
+        </div>
+    </div>
+    </div>
+
+    </div>
+</div>
+
+ -->
+
+
+<div  class="container">
+
+ <div *ngIf="blog" class="row mainBlog-first-row">
+    <h3 class="title col-lg-12">{{blog.title}}</h3>
+    <h5 class="author col-lg-12">Posted By: {{blog.author}}</h5>
+    <h5 class="date col-lg-12">{{blog.date | date}}</h5>
+    <div class="col-lg-3 votes badge badge-success">
+       
+
+        <button class="like" [disabled]="isDisliked"  (click)="onLike(blog._id)"><i [ngClass]="{'fas fas voteColor': isLiked}"  class="far far fa-thumbs-up">
+        <h5 >{{blog.likes}}</h5></i></button>
+
+        <button class="dislike"  [disabled]="isLiked"  (click)="onDislike(blog._id)"><i [ngClass]="{'fas fas voteColor': isDisliked}"  class="far far fa-thumbs-down">
+        <h5>{{blog.dislikes}}</h5></i></button>
+        
+        <a routerLink="blogs" class="bookmark" (click)="onSaveBlog(blog._id)"><i [ngClass]="{'fas fas' : isSaved}" class="far far fa-bookmark"></i></a>
+
+
+    </div>
+    
+</div>
+
+<div class="row mainBlog-second-row">
+    <p class="description">{{blog.description}}</p>
+</div>
+
+<hr>
+
+<h5>Comments : </h5>
+ <div class="comment-section jumbotron">
+    
+    
+    <div class="row jumbotron single-comment">
+        <div class="col-lg-2 image" >
+            <img src="https://cdn.onlinewebfonts.com/svg/img_518099.png" style="height: 50px; width: 50px;" class="mx-auto img-fluid img-circle d-block" alt="avatar">
+        </div>
+        <div class="col-md-10 comment-details">
+            <!-- <h6>{{username}}</h6> -->
+            <input type="text"  class="form-control col-lg-10" [(ngModel)]="userComment" placeholder="Leave a comment...">
+            <button class="col-md-1" type="button" class="btn cmnt" (click)="onAddComment()"><i class="far fa-comment"></i></button>
+            <hr>
+        </div>
+    </div>
+
+    
+
+    <div *ngFor="let comment of blog.comments" class="row jumbotron single-comment">
+        <div class="col-lg-2 image" >
+            <img src="https://cdn.onlinewebfonts.com/svg/img_518099.png" style="height: 50px; width: 50px;" class="mx-auto img-fluid img-circle d-block" alt="avatar">
+        </div>
+        <div class="col-md-10 comment-details">
+           <h6 class="" >{{comment.username}}</h6>
+            <div class="comment-date">
+                <h6 class="">{{comment.date | date }} </h6>
+                <h6 class="time">{{comment.date | date:'h:mm a'}}</h6>
+            </div>
+            <h5 class="">{{comment.comment}}</h5>
+            <hr>
+        </div>
+
+    </div>
+
+</div> 
+
+
+</div>

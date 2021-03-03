@@ -1,0 +1,44 @@
+<div class="container">
+<form [formGroup]="blogPostForm" (ngSubmit)="onPostBlog()" class="create-blog">
+  <div class="mb-3">
+    <label for="title" class="form-label">Blog Title</label>
+    <input type="text" class="form-control" placeholder="Enter Blog Title" formControlName="title" id="title" >
+  </div>
+
+
+  <div class="mb-3">
+    <label for="category" class="form-label">Category</label>
+
+    <select name="cars" formControlName="category" class="category form-control" id="cars">
+        <option value="Personal">Personal</option>
+        <option value="Lifestyle">LifeStyle</option>
+        <option value="Finance">Finance</option>
+        <option value="DIY">DIY</option>
+        <option value="Food">Food</option>
+        <option value="Inspirational">Inspirational</option>
+        <option value="Travel">Travel</option>
+        <option value="Health & Fitness">Health & Fitness</option>
+      </select>
+  </div>
+
+  
+
+  <div class="mb-3">
+    <label for="url" class="form-label">External Link</label>
+    <input class="form-control" formControlName="externalLink" type="url" name="url" id="url" placeholder="https://example.com" pattern="https://.*" size="30" required >
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Blog Descripiton</label>
+    <textarea class="form-control" formControlName="description" id="description" rows="8" placeholder="Maximum 400 Characters" maxlength="400"></textarea>
+  </div>
+  <div class="mb-3">
+  <button class="btn col-xs-2 post" [disabled]="!blogPostForm.valid"  type="submit" >Post</button>
+    </div>
+</form>
+
+
+</div>
+
+<div>
+  <app-footer></app-footer>
+</div>

@@ -1,1 +1,94 @@
-<p>blogs works!</p>
+
+<!-- <div *ngIf="isLoading" class="container">
+    <app-loading-spinner></app-loading-spinner>
+</div>
+
+<div *ngIf="!isLoading" class="ui main text container">
+    
+    <div *ngIf="mainBlog" class="main-blog">
+    <div class="blog-heading">
+        <div class="row">
+            <div class="col-md-10">
+                <h1 class="ui header">{{mainBlog.title}}</h1>
+                <p>{{mainBlog.description}}</p>
+                <p>{{mainBlog.author}}</p>
+            </div>
+            <div class="person-img col-md-2">
+                <img src="../../../assets/images/blogger-image.png" style="height: 150px; width: 150px;" alt="">
+            </div>
+        </div>
+
+    </div>
+
+    
+    <div class="blog-content">
+
+        <p>{{mainBlog.description}}</p>
+    </div>
+    </div>
+
+
+    <div class="jumbotron">
+        <div class="allblogs">
+            <app-blog *ngFor="let singleBlog of allBlogs" [blog]="singleBlog"
+            (blogToRead) = "onReadBlog($event)"
+            (likeBlog) = "onLike($event)"
+            (dislikeBlog) = "onDislike($event)"
+            (saveBlog) = "onSaveBlog($event)"
+            ></app-blog>
+        </div>
+    </div>
+
+
+</div>
+
+<app-footer></app-footer> -->
+
+<div *ngIf="isLoading" class="container">
+    <app-loading-spinner></app-loading-spinner>
+</div>
+
+
+<div  *ngIf="mainBlog && !isLoading" class="container">
+    <div class="row ">
+        <div class="main-blog jumbotron col-lg-8">
+            <app-blog  
+                [blog]="mainBlog"
+                (likeBlog) = "onLike($event)"
+                (dislikeBlog) = "onDislike($event)"
+                (saveBlog) = "onSaveBlog($event)"
+                (addComment) = "onAddComment($event)"
+                >
+            </app-blog>
+        </div>
+
+
+        <div class="allBlogs-list jumbotron col-lg-4">
+            
+            <div *ngFor="let singleBlog of allBlogs" class="jumbotron single-blog">
+                <div class="row first-row">
+                    <div class="col-lg-3 image" >
+                        <img src="https://cdn.onlinewebfonts.com/svg/img_518099.png" style="height: 50px; width: 50px;" class="mx-auto img-fluid img-circle d-block" alt="avatar">
+                    </div>
+                    <div class="col-lg-9 details">
+                        <a routerLink="blogs" (click)="onReadBlog(singleBlog)" >
+                            <p class="singleBlog-title">{{singleBlog.title}}</p>
+                            <h6 class="singleBlog-author">{{singleBlog.author}}</h6>
+                            <h6 class="singleBlog-date">{{singleBlog.date | date}}</h6>
+                        </a>
+                    </div>
+                </div>
+                <div class="row second-row">
+                    <p style="font-size: 13px;" class="singleBlog-description">{{singleBlog.description | slice:0:100}}....</p>
+                </div>
+
+            </div>
+        
+        </div>
+    </div>
+</div>
+
+
+<footer style="bottom: 0px;">
+    <app-footer></app-footer>
+</footer>

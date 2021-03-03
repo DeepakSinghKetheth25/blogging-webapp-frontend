@@ -1,35 +1,30 @@
-.jumbotron{
-    background-color: #332E2D;
+footer{
+    background-color: #FFFFFF;
     margin-bottom: 0px;
-    color: white;
+    font-family: 'Mukta', sans-serif;
 }
 
 i{
-    color: grey;
+    font-size: 20px;
 }
 
-.container{
-    max-width: 500px;
-    font-size: 25px;
+a{
+    color: #F16334;
 }
 
-.verticalline{
-    border-left: 2px solid grey;
-    height: 170px;
+.name{
+    color: #FFFFFF;
+    background-color: #F16334;
+    margin-top: 0px;
+    margin-bottom: 10px;
 }
 
-.contact{
-    margin-top: 50px;
+a:hover {
+    color: white;
+    background-color: #F16334;
 }
 
-.navigate{
-    color: grey;
-}
 
-.navigate p{
-    font-size: 15px;
-}
 
-.navigate a{
-    text-decoration: none;
-}
+
+

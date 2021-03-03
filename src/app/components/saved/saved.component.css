@@ -1,0 +1,203 @@
+.container{
+    margin-top: 50px;
+    font-family: 'Mukta', sans-serif;
+
+}
+
+.saved-list{   
+    margin: 0px;
+    margin-top: 50px;
+    padding: 5px;
+    border-radius: 0px;
+    background-color: #FFFFFF;
+}
+
+.main-blog{
+    background-color: white;
+    margin-top: 0px;
+    padding-top: 0px;
+
+}
+
+.single-blog{
+    margin-bottom: 10px;
+    padding: 1px;
+    background-color: #FBFCFD;
+    min-height: 120px;
+
+}
+
+.first-row{
+    margin-top: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.image{
+
+    margin: 0px;
+    width: auto;
+}
+
+.image img{
+    padding: 0px;
+    margin: 0px;
+
+}
+
+.first-row > .details > a{
+    text-decoration: none;
+    color: black;
+}
+
+.first-row > .details > a:hover{
+    text-decoration: none;
+    color: #F16334;
+}
+
+
+.second-row{
+    padding-left: 25px;
+    padding-right: 15px;
+
+}
+
+.saved-list-title{
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+
+.saved-list-description{
+    font-size: 12px;
+    padding-bottom: 0px;
+    margin-bottom: 15px;
+}
+
+
+
+/* Main Blog Styling */
+
+.mainBlog-first-row .title{
+    font-size: 35px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.mainBlog-second-row{
+    margin-top: 50px;
+}
+
+.mainBlog-second-row .description{
+    font-size: 16px;
+}
+
+.author{
+    /* background-color: lightpink; */
+}
+
+.date{
+    margin-top: 0px;
+    /* background-color: lightskyblue; */
+}
+
+.votes{
+    display: flex;
+    margin-left: 10px;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 20px;
+    /* background-color: lightgreen; */
+    /* padding-top: 10px; */
+}
+
+.voteColor{
+    color: #F16334;
+}
+
+.votes button{
+    padding: 0px;
+    margin: 0px;
+    background-color: white;
+    border: none;
+    /* background-color: white; */
+}
+
+.bookmark{
+    color: #F16334;
+}
+
+.fa-thumbs-up{
+    color: #F16334;
+}
+
+.fa-thumbs-down{
+    color: #F16334;
+}
+
+
+.cmnt{
+    background-color: #F16334;
+    color : white;
+}
+
+.votes i{
+
+    padding: 15px;
+    padding-bottom: 0px;
+    /* margin-top: ; */
+    /* margin-left: 15px; */
+}
+
+.badge{
+    background-color: white;
+    color: black;
+}
+
+
+
+/*  Comment Section Styling */
+
+.comment-section{
+    padding: 30px;
+    background-color: #FBFCFD;
+}
+
+.single-comment{
+    /* background-color: lightyellow; */
+    background-color: #FBFCFD;
+    padding: 5px;
+    margin-bottom: 0px;
+
+}
+
+.single-comment-input{
+    margin-bottom: 10px;
+
+}
+
+.single-comment .image{
+    /* background-color: white; */
+    margin-left: 0px;
+
+}
+
+.comment-username{
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.comment-date{
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+    padding: 0px;
+}
+
+.comment-date > .time{
+    margin-left: 15px;
+}
+
+
+
+
+/* Message */

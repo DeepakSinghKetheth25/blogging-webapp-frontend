@@ -1,0 +1,26 @@
+.edit{
+    float: right;
+    background-color: #FFFFFF;
+    color: #F16334;
+    border-color: white;
+    font-size: 16px;
+    margin-top: 15px;
+    height: 40px;
+    width: 40px;
+}
+
+button:hover{
+    background-color: #F16334;
+    color: white;
+    border-color: white;
+
+
+}
+
+button:focus{
+    background-color: #F16334;
+    color: white;
+    border-color: white;
+
+
+}

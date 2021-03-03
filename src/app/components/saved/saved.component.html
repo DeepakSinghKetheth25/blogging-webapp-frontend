@@ -1,0 +1,107 @@
+<div *ngIf="isLoading" class="container">
+    <app-loading-spinner></app-loading-spinner>
+</div>
+
+<div *ngIf="message" class="message alert alert-danger">
+<p style="height: 100%;">{{this.message}}</p>
+</div>
+
+
+<div *ngIf="!isLoading && savedBlogsIds.length!=0" class="container">
+    <div  class="row ">
+        <div class="main-blog jumbotron col-lg-8">
+            
+            <div *ngIf="mainBlog" class="row mainBlog-first-row">
+                <h3 class="title col-lg-12">{{mainBlog.title}}</h3>
+                <h5 class="author col-lg-12">Posted By: {{mainBlog.author}}</h5>
+                <h5 class="date col-lg-12">{{mainBlog.date | date}}</h5>
+                <div class="col-lg-3 votes badge badge-success">
+                   
+
+                    <button class="like" [disabled]="isDisliked"  (click)="onLike(mainBlog._id)"><i [ngClass]="{'fas fas voteColor': isLiked}"  class="far far fa-thumbs-up">
+                    <h5 >{{mainBlog.likes}}</h5></i></button>
+
+                    <button class="dislike"  [disabled]="isLiked"  (click)="onDislike(mainBlog._id)"><i [ngClass]="{'fas fas voteColor': isDisliked}"  class="far far fa-thumbs-down">
+                    <h5>{{mainBlog.dislikes}}</h5></i></button>
+                    
+                    <a routerLink="" class="bookmark" (click)="onUnsaveBlog(mainBlog._id)"><i [ngClass]="{'fas fas' : !isSaved}" class="far far fa-bookmark"></i></a>
+
+
+                </div>
+                
+            </div>
+
+            <div class="row mainBlog-second-row">
+                <p class="description">{{mainBlog.description}}</p>
+            </div>
+
+            <hr>
+
+            <h5>Comments : </h5>
+            <div class="comment-section jumbotron">
+                
+                <div class="row jumbotron single-comment single-comment-input">
+                    <div class="col-lg-2 image" >
+                        <img src="https://cdn.onlinewebfonts.com/svg/img_518099.png" style="height: 50px; width: 50px;" class="mx-auto img-fluid img-circle d-block" alt="avatar">
+                    </div>
+                    <div class="col-md-10 comment-details">
+                        <!-- <h6>{{username}}</h6> -->
+                        <input type="text"  class="form-control col-lg-10" [(ngModel)]="userComment" placeholder="Leave a comment...">
+                        <button class="col-md-1" type="button" class="btn cmnt" (click)="onAddComment()"><i class="far fa-comment"></i></button>
+                        <hr>
+                    </div>
+                </div>
+                
+                
+
+                
+
+                <div *ngFor="let comment of comments" class="row jumbotron single-comment">
+                    <div class="col-lg-2 image" >
+                        <img src="https://cdn.onlinewebfonts.com/svg/img_518099.png" style="height: 50px; width: 50px;" class="mx-auto img-fluid img-circle d-block" alt="avatar">
+                    </div>
+                    <div class="col-md-10 comment-details">
+                       <h6 class="">{{comment.username}}</h6>
+                        <div class="comment-date">
+                            <h6 class="">{{comment.date | date }} </h6>
+                            <h6 class="time">{{comment.date | date:'h:mm a'}}</h6>
+                        </div>
+                        <h5 class="">{{comment.comment}}</h5>
+                        <hr>
+                    </div>
+ 
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="saved-list jumbotron col-lg-4">
+            
+            <div *ngFor="let savedBlog of savedBlogs" class="jumbotron single-blog">
+                <div class="row first-row">
+                    <div class="col-lg-3 image" >
+                        <img src="https://cdn.onlinewebfonts.com/svg/img_518099.png" style="height: 50px; width: 50px;" class="mx-auto img-fluid img-circle d-block" alt="avatar">
+                    </div>
+                    <div class="col-lg-9 details" >
+                        <a routerLink="saved" (click)="onReadBlog(savedBlog)">
+                            <p class="saved-list-title">{{savedBlog.title}}</p>
+                            <h6 class="saved-list-author">{{savedBlog.author}}</h6>
+                            <h6 class="saved-list-date">{{savedBlog.date | date}}</h6>
+                        </a>
+                    </div>
+                </div>
+                <div class="row second-row ">
+                    <p class="saved-list-description">{{savedBlog.description | slice:0:100}}....</p>
+                </div>
+
+            </div>
+        
+        </div>
+    </div>
+</div>
+
+
+<footer style="bottom: 0px;">
+    <app-footer></app-footer>
+</footer>

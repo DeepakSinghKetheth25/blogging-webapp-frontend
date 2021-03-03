@@ -1,5 +1,68 @@
 nav{
-    z-index: 2;
-    margin-bottom: 5px;
+    margin: 0px;
     padding: 0px;
+    z-index: 2;
+    /* margin-bottom: 5px; */
+    padding-top: 10px;
+    font-size: 16   px;
+    position: sticky;
 }
+
+
+.navbar-default{
+    background-color: white;
+    padding: 5px;
+}
+
+
+.navbar-collapse{
+    padding: 10px;
+}
+
+
+
+
+.navbar-default .navbar-brand:hover {
+    color: white;
+    background-color: #F16334;
+    transition: 0.1s ease-in;
+    border-radius: 5px;
+}
+
+.navbar-brand{
+
+    padding: 0px 10px;
+    padding-top: 8px;
+    color: #F16334;
+    font-size: 35px;
+}
+
+
+.navbar-brand:focus{
+    color: white;
+    background-color: #F16334;
+    border-radius: 5px;
+}
+
+.navbar-default .navbar-nav>li>a {
+    font-family: 'Mukta', sans-serif;
+    /* color: #F16334 ; */
+    font-size: 18px;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    background-color: #F16334;
+    color: white;
+    border-radius: 5px;
+
+}
+
+
+.nav>li>a:focus, .nav>li>a:hover, .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus  {
+    background-color: #F16334;
+    color: white;
+    border-radius: 5px; 
+    transition: 0.1s ease-in;
+}
+
+

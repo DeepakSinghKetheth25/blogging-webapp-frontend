@@ -4,7 +4,7 @@
     background-color: white;
 }
 
-img{
+/* img{
 
     
     z-index: 0px;
@@ -16,7 +16,21 @@ img{
     height: 650px;
     top: 0px;
 
+} */
+
+
+.background{
+    z-index: -1;
+    margin-top: -70px;
+    padding: 0px;
+    height: auto;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
+
+
 
 .blog{
     width: 100%;
@@ -53,6 +67,7 @@ img{
     margin-left: 50px;
 }
 
+
 .singleblog{
     padding: 0px;
     margin: 0px;
@@ -62,30 +77,44 @@ img{
     margin-left: 30px;
     border-radius: 3px;
     width: 250px;
-    height: 400px;
+    height: auto;
 
-
-    /* box-shadow: 3px 3px 3px 1px  grey; */
-    /* box-shadow: 3px 3px 3px 1px  grey; */
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 
     box-shadow: 0 0 10px grey;
     box-shadow: 0 0 10px grey;
 }
+
 
 .singleblog img{
     border-radius: 3px;
     width: 100%;
     height: auto;
-    
+}
+
+.blog-details{
+    margin: 0px;
+    /* background-color: #E31D61; */
+    height: 220px;
+}
+
+.title{
+    margin-top: 15px;
+    font-size: 15px;
 }
 
 .singleblog p{
-    font-size: 14px;
-    padding-left : 3px ;
-    padding-right: 3px;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    font-size: 12px;
+    padding-left : 10% ;
+    padding-right: 10%;
 }
 
-.fa-thumbs-up{
+.fa-bookmark{
     color: black;
 }
 
@@ -95,9 +124,93 @@ img{
     /* float: left; */
 }
 
-.like{
-    text-align: center;
-    /* float: right; */
+
+.save {
+    margin-top: 5%;
+}
+
+.save a{
     font-size: 20px;
+}
+
+
+.votes{
+    display: flex;
+    flex-direction: column;
+    margin-left: 45%;
+    margin-right: 45%;
+    margin-top: 10px;
+}
+
+
+
+.icons a{
+    font-size: 20px;
+}
+
+.icons a:hover{
+    color: #E31D61;
+}
+
+.voteColor{
+    color: #E31D61;
+}
+
+
+.activeBlog{
+    transition: 1s;
+    transform: translateY(-5%);
+    box-shadow: 0 0 10px black;
+}
+
+.voteCount{
+    text-align: center;
+    padding-left:8px;
+
+}
+.votes p{
+    text-decoration: none;
+    margin-top: 5px;
+    /* margin-left: 50%; */
+    /* transform: translateX(-50%); */
+}
+
+
+/*  New Way */
+
+.text{
+    z-index: 1;
+    font-size: 60px;
+    color: white;
+    position: absolute;
+
+    top: 240px;
+    left: 4%;
+    font-family: 'Fredoka One', cursive;
+}
+
+.quote{
+
+    font-size: 45px;
+    color: white;
+    position: absolute;
+
+    top: 180px;
+    left: 2%;
+    font-family: 'Fredoka One', cursive;
+
+
+}
+
+.btn{
+    font-size: 70px;
+    /* border-radius: 45%; */
+    color: #F16334;
+    position: absolute;
+    padding: 20px;
+
+    top: 450px;
+    left: 4%;
+    font-family: 'Fredoka One', cursive;
 
 }

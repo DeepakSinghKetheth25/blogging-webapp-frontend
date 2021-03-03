@@ -1,0 +1,18 @@
+.container{
+    font-family: 'Mukta', sans-serif;
+}
+
+.row{
+    margin-top: 50px;
+}
+
+.btn{
+
+    background-color: #FFFFFF;
+    color: #F16334;
+}
+
+button:hover{
+    background-color: #F16334;
+    color: white;
+}
